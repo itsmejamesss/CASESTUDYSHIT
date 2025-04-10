@@ -1,0 +1,185 @@
+/* Dark Mode Background Styling */
+body {
+    background: linear-gradient(135deg, #2d2d2d, #3c3c3c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Centering the login form */
+.login-container {
+    width: 560px;
+    padding: 40px;
+    background-color: #0b250e;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 50px auto;
+    position: relative;
+}
+
+/* Form title */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Error message styling */
+.error {
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Styling input fields */
+.login-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #323f32;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for input fields */
+.login-container input:focus {
+    border-color: #095013;
+    outline: none;
+    box-shadow: 0 0 8px rgba(16, 88, 7, 0.7);
+}
+
+/* Login button styling */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0e440e;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Button hover effect */
+.login-container button:hover {
+    background-color: #167723;
+}
+
+/* Register link styling */
+.login-container p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+.login-container a {
+    color: #207a09;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* Flexbox container for buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-top: -30px;
+    
+}
+
+.button-container a{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+
+/* Register button styling */
+.register-a {
+    width: auto;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+/* .register-button:hover {
+    background-color: #5360d2;
+} */
+
+/* Icon styling */
+.icon {
+    color: rgb(221, 221, 221) !important; /* Force the color to black */
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Styling input container to align icon and input */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 14px;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    font-size: 16px;
+    background-color: #ececec !important;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus state for input fields */
+.input-container input:focus {
+    border-color: #6e7bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(110, 123, 255, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input,
+    button {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .register-button {
+        padding: 12px 18px;
+    }
+}

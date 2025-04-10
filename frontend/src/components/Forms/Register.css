@@ -1,0 +1,173 @@
+/* Dark Mode Background Styling */
+body {
+    background: linear-gradient(135deg, #2d2d2d, #3c3c3c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling the registration container */
+.register-container {
+    width: 550px;
+    margin: auto;
+    padding: 40px;
+    background-color: #0b250e;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+/* Title styling */
+h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Input, select, and button styling */
+input,
+select,
+button {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #444;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+    color: white;
+}
+
+/* Focus state for inputs and selects */
+input:focus,
+select:focus {
+    border-color: #087a16 !important;
+    outline: none;
+    box-shadow: 0 0 8px #0b250e !important;
+}
+
+/* Button styling */
+button {
+    background-color: #218f13;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1a4913 !important;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.error-message p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Flexbox for button alignment */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* Back button styling */
+.back-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    color: #09681e !important;
+}
+
+/* Additional padding for better spacing in the container */
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Responsive design: container shrinks on smaller screens */
+@media (max-width: 600px) {
+    .register-container {
+        width: 90%;
+        padding: 20px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+}
+
+/* Icon styling */
+.icon {
+    color: #6e7bff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+/* Styling input container to align icon and input */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 14px;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+    color: white;
+}
+
+/* Input and select focus state */
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #6e7bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(110, 123, 255, 0.7);
+}
+
+/* Button hover state */
+button:hover {
+    background-color: #5360d2;
+}
