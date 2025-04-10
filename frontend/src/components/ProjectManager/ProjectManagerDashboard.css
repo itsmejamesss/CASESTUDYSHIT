@@ -1,210 +1,129 @@
-/* ProjectManagerDashboard.css */
-
-/* Global Settings */
 :root {
-    --primary-color: #4a90e2;
-    --secondary-color: #f5f7fa;
-    --sidebar-bg: linear-gradient(135deg, #2c3e50, #4a4e69);
-    --accent-color: #e74c3c;
-    --hover-bg: rgba(255, 255, 255, 0.1);
-    --text-color: #ffffff;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f7fa;
+  --sidebar-bg: linear-gradient(135deg, #2c3e50, #4a4e69);
+  --accent-color: #e74c3c;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --text-color: #ffffff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: var(--font-family);
-    background-color: var(--secondary-color);
-    color: #333;
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: #333;
 }
 
 /* Sidebar */
 .sidebar {
-    background: var(--sidebar-bg);
-    color: var(--text-color);
-    width: 260px;
-    height: 100vh;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  background: var(--sidebar-bg);
+  color: var(--text-color);
+  width: 260px;
+  height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
+
 .sidebar h4 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .sidebar .nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar .nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: block;
 }
 
 .sidebar .nav-link:hover {
-    background-color: var(--hover-bg);
-    transform: translateX(5px);
+  background-color: var(--hover-bg);
+  transform: translateX(5px);
 }
 
 .sidebar .nav-link svg {
-    margin-right: 8px;
+  margin-right: 8px;
+}
+
+/* Sidebar bottom for Logout */
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+/* Greetings Navbar */
+.greetings-navbar {
+  position: fixed;
+  top: 0;
+  left: 260px; /* sidebar width */
+  right: 0;
+  height: 60px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.greetings-navbar .greeting-info h2.navbar-title {
+  margin: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.greetings-navbar .greeting-info .navbar-subtitle {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
 }
 
 /* Main Content Area */
-.flex-grow-1 {
+
+/* Main Content Area */
+.content-area {
     flex: 1;
     background: var(--secondary-color);
-    padding: 40px;
+    padding: 10px 40px 120px 40px; /* top padding accounts for navbar height */
     overflow-y: auto;
-}
-
-/* Header in Content */
-.container .text-center h2 {
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.container .text-center p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Buttons */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: darken(var(--primary-color), 10%);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-/* List Group */
-.list-group-item {
-    border: none;
-    background-color: #fff;
-    margin-bottom: 10px;
-    padding: 15px 20px;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
-}
-
-.list-group-item:hover {
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-
-/* Task Badge */
-.badge {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    border-radius: 25px;
+  }
+  
+  /* Projects Table */
+  .projects-table {
+    width: 100%;
+    min-width: 1200px; /* Adjust value as needed */
+  }
+  
+  .projects-table th,
+  .projects-table td {
+    vertical-align: middle;
+    padding: 12px;
+  }
+  
+  .projects-table th {
     background-color: var(--primary-color);
     color: #fff;
-}
-
-/* Modal Styling */
-.modal-content {
-    border-radius: 12px;
-    border: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.modal-header {
-    background-color: var(--primary-color);
-    color: #fff;
-    border-bottom: none;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.modal-title {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.modal-body {
-    padding: 30px;
-}
-
-/* Form Controls */
-.form-control {
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in-up {
-    animation: fadeInUp 0.5s ease-in-out;
-}
-
-/* Extra: Card styling for projects/tasks display */
-.card {
-    background: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px;
-    padding: 20px;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-}
-
-/* Extra: Responsive adjustments */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 220px;
-        padding: 20px;
-    }
-
-    .flex-grow-1 {
-        padding: 20px;
-    }
-
-    .sidebar .nav-link {
-        font-size: 1rem;
-        padding: 10px 12px;
-    }
-}
+    text-align: left;
+  }
+  
+  /* Make the table wider (horizontal) */
+  .projects-table td:last-child {
+    text-align: right;
+  }

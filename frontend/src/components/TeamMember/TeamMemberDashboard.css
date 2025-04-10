@@ -11,6 +11,7 @@
     .dashboard-container {
         display: flex;
         height: 100vh; /* Make the container full height */
+        background-color: #0c5c29;
     }
 
     /* Sidebar Styles */
@@ -33,6 +34,27 @@
         text-align: center;
     }
 
+    .topbar {
+        position: fixed;
+        top: 0;
+        left: 260px; /* offset for the sidebar */
+        right: 0;
+        height: 60px;
+        background-color: #4a90e2;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Push main content below the topbar */
+    .flex-grow-1.p-4 {
+        margin-left: 230px; /* same as sidebar width */
+        margin-top: 60px;    /* same as topbar height */
+    }
+    
     /* Sidebar Button Styles */
     .sidebar-links .btn {
         background-color: #e63946;
@@ -81,6 +103,12 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
         background-color: white; /* White background for contrast */
+    }
+
+    .project-table, .task-table {
+        height: auto;
+        width: 1000px;  /* Or adjust to any desired height */
+        overflow-y: auto;
     }
 
     .product-card:hover {
@@ -208,6 +236,7 @@
         border-radius: 8px; /* Rounded corners */
         background-color: #30B3AF; /* Background color */
         color: #fff; /* Text color */
+        margin-left: 200px;
     }
 
     .btn:hover {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Nav, Container, Button, ListGroup, Spinner, Alert } from 'react-bootstrap';
+import { Nav, Container, Button, Table, Spinner, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { motion } from 'framer-motion';
 import { FaSignOutAlt, FaList } from 'react-icons/fa';
@@ -71,50 +71,93 @@ const TeamMemberDashboard = () => {
             </div>
 
             <div className="flex-grow-1 p-4">
-                <Container className="text-center">
-                    <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                        <h2 className="fw-bold text-dark">Welcome, Team Member!</h2>
-                        <p className="text-muted">View your assigned projects and tasks.</p>
+                <div className="topbar">
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="greeting-text"
+                    >
+                        <h4 className="m-0 text-white">👋 Welcome, Team Member!</h4>
                     </motion.div>
+                </div>
 
+                <Container className="mt-4">
                     {loading && <Spinner animation="border" />}
                     {error && <Alert variant="danger">{error}</Alert>}
 
+                    {/* Projects Section (Table Only) */}
                     <div className="mt-4">
                         <h4>Your Projects</h4>
-                        {projects.length === 0 ? (
-                            <p className="text-muted">No projects assigned to you.</p>
-                        ) : (
-                            <ListGroup>
-                                {projects.map((project) => (
-                                    <ListGroup.Item key={project.id} className="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <strong>{project.name}</strong>
-                                            <p className="mb-0 text-muted">{project.description}</p>
-                                        </div>
-                                    </ListGroup.Item>
-                                ))}
-                            </ListGroup>
-                        )}
+                        
+                        {/* Table Layout for Projects */}
+                        <Table striped bordered hover responsive className="project-table">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {projects.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="3" className="text-center">No projects assigned to you.</td>
+                                    </tr>
+                                ) : (
+                                    projects.map((project) => (
+                                        <tr key={project.id}>
+                                            <td>{project.name}</td>
+                                            <td>{project.description}</td>
+                                            <td>
+                                                <Button variant="primary" onClick={() => navigate(`/project/${project.id}`)}>View Project</Button>
+                                                <Button variant="success" className="ms-2">Done</Button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </Table>
                     </div>
 
+                    {/* Tasks Section (Table Only) */}
                     <div className="mt-4">
                         <h4>Your Tasks</h4>
-                        {tasks.length === 0 ? (
-                            <p className="text-muted">No tasks assigned to you.</p>
-                        ) : (
-                            <ListGroup>
-                                {tasks.map((task) => (
-                                    <ListGroup.Item key={task.id} className="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <strong>{task.title}</strong>
-                                            <p className="mb-0 text-muted">{task.description}</p>
-                                        </div>
-                                        <span className="badge bg-info">{task.status}</span>
-                                    </ListGroup.Item>
-                                ))}
-                            </ListGroup>
-                        )}
+                        
+                        {/* Table Layout for Tasks */}
+                        <Table striped bordered hover responsive className="task-table">
+                            <thead>
+                                <tr>
+                                    <th>Task Title</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {tasks.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="4" className="text-center">No tasks assigned to you.</td>
+                                    </tr>
+                                ) : (
+                                    tasks.map((task) => (
+                                        <tr key={task.id}>
+                                            <td>{task.title}</td>
+                                            <td>{task.description}</td>
+                                            <td>
+                                                <span className={`badge bg-${task.status === 'Completed' ? 'success' : 'warning'}`}>
+                                                    {task.status}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <Button variant="info" onClick={() => navigate(`/task/${task.id}`)}>View Task</Button>
+                                                <Button variant="success" className="ms-2">Done</Button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </Table>
                     </div>
                 </Container>
             </div>
