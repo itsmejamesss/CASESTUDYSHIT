@@ -1,11 +1,10 @@
 :root {
-  --primary-color: #4a90e2;
+  --primary-color: #4a90e2; /* Current primary color */
   --secondary-color: #f5f7fa;
-  --sidebar-bg: linear-gradient(135deg, #2c3e50, #4a4e69);
+  --sidebar-bg: #3a7bd5; /* A complementary shade of the primary color */
   --accent-color: #e74c3c;
   --hover-bg: rgba(255, 255, 255, 0.1);
   --text-color: #ffffff;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -107,23 +106,28 @@ body {
   
   /* Projects Table */
   .projects-table {
-    width: 100%;
-    min-width: 1200px; /* Adjust value as needed */
+      width: auto; /* Adjust width to fit content */
+      max-width: 100%; /* Ensure it does not exceed the container */
+      margin: 0 auto; /* Center the table */
+      border-collapse: collapse; /* Collapse borders for a cleaner look */
   }
   
   .projects-table th,
   .projects-table td {
-    vertical-align: middle;
-    padding: 12px;
+      vertical-align: middle;
+      padding: 12px;
+      border: 1px solid #ddd; /* Add border for clarity */
   }
   
   .projects-table th {
-    background-color: var(--primary-color);
-    color: #fff;
-    text-align: left;
+      background-color: var(--primary-color);
+      color: #fff;
+      text-align: left;
   }
   
   /* Make the table wider (horizontal) */
   .projects-table td:last-child {
     text-align: right;
   }
+
+  
